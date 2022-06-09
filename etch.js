@@ -7,9 +7,11 @@ function createSquare(size) {
   return square;
 }
 
-function createGrid(size) {
-  container.appendChild(createSquare(50));
+function createGrid(gridSize, squareSize) {
+  for (let index = 0; index < gridSize; index++) {
+    container.appendChild(createSquare(squareSize));
+  }
 }
 
 const container = document.querySelector('.container');
-createGrid(16);
+createGrid(16, 50);
