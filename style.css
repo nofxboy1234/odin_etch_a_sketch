@@ -4,8 +4,16 @@
   box-sizing: border-box;
 }
 
-.container {
-  margin: 100px;
+.container-main {
+  padding: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-grid {
+  margin: 20px;
   display: flex;
   flex-direction: row;
   justify-content: center;
