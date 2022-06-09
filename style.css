@@ -16,3 +16,7 @@
   border: 1px solid black;
   flex: 0 0 auto;
 }
+
+.black-square {
+  background-color: black;
+}

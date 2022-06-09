@@ -3,6 +3,7 @@ function createSquare(size) {
   square.classList.add('square');
   square.style.width = `${size}px`;
   square.style.height = `${size}px`;
+  square.addEventListener('mouseenter', changeSquareColour);
 
   return square;
 }
@@ -15,6 +16,10 @@ function createGrid(gridSize, squareSize) {
     }
     container.appendChild(row);
   }
+}
+
+function changeSquareColour(e) {
+  e.target.classList.add('black-square');
 }
 
 const container = document.querySelector('.container');
