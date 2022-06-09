@@ -9,9 +9,13 @@ function createSquare(size) {
 
 function createGrid(gridSize, squareSize) {
   for (let index = 0; index < gridSize; index++) {
-    container.appendChild(createSquare(squareSize));
+    let row = document.createElement('div');
+    for (let index = 0; index < gridSize; index++) {
+      row.appendChild(createSquare(squareSize));
+    }
+    container.appendChild(row);
   }
 }
 
 const container = document.querySelector('.container');
-createGrid(16, 50);
+createGrid(16, 40);
