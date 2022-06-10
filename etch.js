@@ -35,15 +35,32 @@ function removeGrid() {
 }
 
 function promptForGridSize() {
-  let promptValue = prompt('Please enter a new square grid size', '16');
-  let gridSize = Number(promptValue);
+  // let gridSize = 16;
+  // while (Number.isInteger(gridSize) && gridSize > 100) {
+
+  let promptValue = prompt(
+    'Please enter a new square grid size (max 100)',
+    '16'
+  );
+  gridSize = Number(promptValue);
+
+  if (gridSize === 0) {
+    // Cancel or blank value entered
+    return null;
+  }
+
+  if (!Number.isInteger(gridSize) || gridSize < 0 || gridSize > 100) {
+    promptForGridSize();
+  }
 
   return gridSize;
 }
 
 function setupNewGrid() {
   let gridSize = promptForGridSize();
-  createNewGrid(gridSize);
+  if (gridSize) {
+    createNewGrid(gridSize);
+  }
 }
 
 function createNewGrid(gridSize) {
