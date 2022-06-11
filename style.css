@@ -19,6 +19,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .square {
@@ -28,4 +29,8 @@
 
 .black-square {
   background-color: black;
+}
+
+.grid-row {
+  display: flex;
 }

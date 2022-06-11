@@ -20,6 +20,7 @@ function createGrid(gridSize, squareSize) {
 
   for (let index = 0; index < gridSize; index++) {
     let row = document.createElement('div');
+    row.classList.add('grid-row');
     for (let index = 0; index < gridSize; index++) {
       row.appendChild(createSquare(squareSize));
     }
