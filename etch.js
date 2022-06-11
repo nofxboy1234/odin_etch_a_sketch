@@ -3,7 +3,7 @@ function createSquare(size) {
   square.classList.add('square');
   square.style.width = `${size}px`;
   square.style.height = `${size}px`;
-  square.addEventListener('mouseenter', changeSquareColourRandom);
+  square.addEventListener('mouseenter', changeSquareColourBlackTenPercent);
 
   return square;
 }
@@ -78,6 +78,23 @@ function changeSquareColourRandom(e) {
   // https://css-tricks.com/snippets/javascript/random-hex-color/
   const randomColour = Math.floor(Math.random() * 16777215).toString(16);
   e.target.style.backgroundColor = '#' + randomColour;
+}
+
+function changeSquareColourBlackTenPercent(e) {
+  if (Number(e.target.getAttribute('luma')) === 255) {
+    return;
+  }
+
+  let lumaStep = 0.1 * 255;
+
+  if (!e.target.hasAttribute('luma')) {
+    e.target.setAttribute('luma', `${255 - lumaStep}`);
+  } else {
+    let currentLuma = Number(e.target.getAttribute('luma'));
+    e.target.setAttribute('luma', `${currentLuma - lumaStep}`);
+  }
+  const newLuma = e.target.getAttribute('luma');
+  e.target.style.backgroundColor = `rgb(${newLuma}, ${newLuma}, ${newLuma})`;
 }
 
 function addGridSizeButton() {
