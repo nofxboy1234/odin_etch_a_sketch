@@ -11,8 +11,6 @@ function createSquare(size) {
 function newDivForGrid() {
   let div = document.createElement('div');
   div.classList.add('div-grid');
-  div.style.width = gridWidth;
-  div.style.height = gridHeight;
   containerGrid.appendChild(div);
 
   return div;
@@ -90,6 +88,4 @@ const containerGrid = document.querySelector('.container-grid');
 addGridSizeButton();
 
 const defaultGridSize = 16;
-const gridWidth = '600px';
-const gridHeight = '600px';
 createNewGrid(defaultGridSize);
