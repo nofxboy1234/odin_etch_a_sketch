@@ -3,7 +3,7 @@ function createSquare(size) {
   square.classList.add('square');
   square.style.width = `${size}px`;
   square.style.height = `${size}px`;
-  square.addEventListener('mouseenter', changeSquareColour);
+  square.addEventListener('mouseenter', changeSquareColourRandom);
 
   return square;
 }
@@ -72,6 +72,12 @@ function calculateSquareSize(gridSize) {
 
 function changeSquareColour(e) {
   e.target.classList.add('black-square');
+}
+
+function changeSquareColourRandom(e) {
+  // https://css-tricks.com/snippets/javascript/random-hex-color/
+  const randomColour = Math.floor(Math.random() * 16777215).toString(16);
+  e.target.style.backgroundColor = '#' + randomColour;
 }
 
 function addGridSizeButton() {
