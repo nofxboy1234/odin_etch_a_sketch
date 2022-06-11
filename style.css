@@ -14,7 +14,8 @@
 
 .container-grid,
 .div-grid {
-  margin: 10px;
+  /* margin: 10px;
+  padding: 10px; */
   display: flex;
   flex-direction: row;
   justify-content: center;
