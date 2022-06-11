@@ -27,7 +27,6 @@ function createGrid(gridSize, squareSize) {
     }
     divGrid.appendChild(row);
   }
-  // containerGrid.appendChild(divGrid);
 }
 
 function removeGrid() {
@@ -37,9 +36,6 @@ function removeGrid() {
 }
 
 function promptForGridSize() {
-  // let gridSize = 16;
-  // while (Number.isInteger(gridSize) && gridSize > 100) {
-
   let promptValue = prompt(
     'Please enter a new square grid size (max 100)',
     '16'
@@ -73,12 +69,7 @@ function createNewGrid(gridSize) {
 }
 
 function calculateSquareSize(gridSize) {
-  // console.log(divGrid.offsetWidth);
-  // console.log(divGrid.clientWidth);
-
   return divGrid.getBoundingClientRect().width / gridSize;
-
-  // return 500 / 16;
 }
 
 function changeSquareColour(e) {
@@ -100,9 +91,3 @@ addGridSizeButton();
 
 const defaultGridSize = 16;
 createNewGrid(defaultGridSize);
-
-// containerGrid.style.width = '300px';
-// containerGrid.style.height = '300px';
-// let width = containerGrid.offsetWidth;
-// let height = containerGrid.offsetHeight;
-// console.log({ width, height });
