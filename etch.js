@@ -11,8 +11,8 @@ function createSquare(size) {
 function newDivForGrid() {
   let div = document.createElement('div');
   div.classList.add('div-grid');
-  div.style.width = '600px';
-  div.style.height = '600px';
+  div.style.width = gridWidth;
+  div.style.height = gridHeight;
   containerGrid.appendChild(div);
 
   return div;
@@ -69,7 +69,7 @@ function createNewGrid(gridSize) {
 }
 
 function calculateSquareSize(gridSize) {
-  return divGrid.getBoundingClientRect().width / gridSize;
+  return divGrid.offsetWidth / gridSize;
 }
 
 function changeSquareColour(e) {
@@ -90,4 +90,6 @@ const containerGrid = document.querySelector('.container-grid');
 addGridSizeButton();
 
 const defaultGridSize = 16;
+const gridWidth = '600px';
+const gridHeight = '600px';
 createNewGrid(defaultGridSize);
